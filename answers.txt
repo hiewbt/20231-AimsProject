@@ -1,0 +1,10 @@
+#6.1
+-What happens if users choose “Cancel”?
+    Nếu users chọn Cancel thì thông báo thứ 2 vẫn hiện như khi người dùng chọn No
+-How to customize the options to users, e.g. only two options: “Yes” and “No”, OR “I do” and “I don’t”
+    Sử dụng phương thức showOptionDialog trong thư viện JOptionPane
+    /*String[] options = {"i do","i don't"};
+    int option = JOptionPane.showOptionDialog(null, "do you want to change to the first class ticket ?"
+                                ,null, JOptionPane.YES_NO_OPTION,
+                                JOptionPane.QUESTION_MESSAGE,
+                                null,options,options[1]);*/
