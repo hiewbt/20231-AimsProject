@@ -1,0 +1,23 @@
+-Encapsulation:
+Purpose: To encapsulate the internal state of an object.
+Benefits: Protects the internal state, allowing it to be changed without affecting the external interface.
+
+-Read-Only Access:
+Purpose: Provide read-only access to private fields.
+Benefits: Allows external classes to retrieve information without the ability to modify the internal state.
+
+-Abstraction:
+Purpose: Abstracts the internal representation of an object.
+Benefits: Enables the class to change its internal structure without affecting the classes that use it.
+
+-Consistency:
+Purpose: Enforces a consistent way to access data across different classes.
+Benefits: Enhances code readability and maintainability by adhering to a standardized access pattern.
+
+-Compatibility:
+Purpose: Maintains compatibility with existing code.
+Benefits: If a field's representation changes in the future, accessor methods provide a way to update the internal implementation without breaking external code.
+
+-Validation and Logic:
+Purpose: Allows for validation or additional logic during the retrieval of a value.
+Benefits: Enables the implementation of custom logic while still providing a consistent external interface.
