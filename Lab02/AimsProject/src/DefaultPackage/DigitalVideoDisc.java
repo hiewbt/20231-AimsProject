@@ -7,6 +7,10 @@ public class DigitalVideoDisc {
     private int lenght;
     private float cost;
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public DigitalVideoDisc(String title) {
         super();
         this.title = title;
