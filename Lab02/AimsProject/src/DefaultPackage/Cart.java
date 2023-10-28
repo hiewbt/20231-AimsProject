@@ -22,7 +22,19 @@ public class Cart {
 		}
 		else System.out.println("The cart is full. Cannot add to cart!");
 	}
-	
+
+	public void addDigitalVideoDisc(DigitalVideoDisc [] divList) {
+		for (DigitalVideoDisc item:divList) {
+			addDigitalVideoDisc(item);
+		}
+	}
+
+	public void addDigitalVideoDisc(DigitalVideoDisc disc1, DigitalVideoDisc disc2) {
+		addDigitalVideoDisc(disc1);
+		addDigitalVideoDisc(disc2);
+	}
+
+
 	public float totalCost() {
 		for(int i = 0; i < itemsOderedList.size(); i++) {
 			total += itemsOderedList.get(i).getCost();
