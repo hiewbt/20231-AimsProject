@@ -29,4 +29,13 @@ public class Cart {
 		}
 		return total;
 	}
+
+	public void cartItem() {
+		for(int i = 0; i < itemsOderedList.size(); i++) {
+			System.out.println(i+1 + "\t" + itemsOderedList.get(i).getTitle() + "\t\t" + itemsOderedList.get(i).getCost());
+		}
+		total = 0;
+		System.out.println(" \ttotal\t\t" + totalCost());
+	}
+
 }
