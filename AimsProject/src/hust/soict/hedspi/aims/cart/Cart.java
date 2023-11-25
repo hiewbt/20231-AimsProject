@@ -1,6 +1,6 @@
 package hust.soict.hedspi.aims.cart;
 
-import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
+import hust.soict.hedspi.aims.media.DigitalVideoDisc;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -73,7 +73,7 @@ public class Cart {
 		keyboard.nextLine();
 //		keyboard.close();
 		for (DigitalVideoDisc digitalVideoDisc : itemsOrderedList) {
-			if (digitalVideoDisc.id == id) {
+			if (digitalVideoDisc.getId() == id) {
 				System.out.println(digitalVideoDisc.toString());
 				return;
 			}
