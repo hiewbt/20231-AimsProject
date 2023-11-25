@@ -3,24 +3,25 @@ package hust.soict.hedspi.aims.cart;
 import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
 	private float total = 0;
-	ArrayList<DigitalVideoDisc> itemsOderedList = new ArrayList<DigitalVideoDisc>(MAX_NUMBERS_ORDERED);
+	ArrayList<DigitalVideoDisc> itemsOrderedList = new ArrayList<DigitalVideoDisc>(MAX_NUMBERS_ORDERED);
 	public int qtyOrdered = 0;
 	
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
-		itemsOderedList.remove(disc);
+		itemsOrderedList.remove(disc);
 		System.out.println("The disc " + disc.getTitle() + " has been removed");
-		qtyOrdered = itemsOderedList.size();
+		qtyOrdered = itemsOrderedList.size();
 	}
 	
 	public void addDigitalVideoDisc(DigitalVideoDisc disc) {
 		if(qtyOrdered < MAX_NUMBERS_ORDERED) {
-			itemsOderedList.add(disc);
+			itemsOrderedList.add(disc);
 			System.out.println("The disc " + disc.getTitle() + " has been added");
-			qtyOrdered = itemsOderedList.size();
+			qtyOrdered = itemsOrderedList.size();
 		}
 		else System.out.println("The cart is full. Cannot add to cart!");
 	}
@@ -38,19 +39,61 @@ public class Cart {
 
 
 	public float totalCost() {
-        for (DigitalVideoDisc digitalVideoDisc : itemsOderedList) {
+		total = 0;
+        for (DigitalVideoDisc digitalVideoDisc : itemsOrderedList) {
             total += digitalVideoDisc.getCost();
         }
 		return total;
 	}
 
 	public void cartItem() {
-		for(int i = 0; i < itemsOderedList.size(); i++) {
-//			System.out.println(i+1 + "\t" + itemsOderedList.get(i).getTitle() + "\t\t" + itemsOderedList.get(i).getCost());
-			System.out.printf("%-4d%-20s%.2f\n",i+1, itemsOderedList.get(i).getTitle(), itemsOderedList.get(i).getCost());
+		for(int i = 0; i < itemsOrderedList.size(); i++) {
+//			System.out.println(i+1 + "\t" + itemsOrderedList.get(i).getTitle() + "\t\t" + itemsOrderedList.get(i).getCost());
+			System.out.printf("%-4d%-20s%.2f\n",i+1, itemsOrderedList.get(i).getTitle(), itemsOrderedList.get(i).getCost());
 		}
 		total = 0;
 		System.out.printf("%-4s%-20s%.2f", "", "Total", totalCost());
 	}
 
+	public void print() {
+		System.out.println("***********************CART***********************");
+		System.out.println("Ordered Items:");
+		for (int i = 0; i < itemsOrderedList.size(); i++) {
+			System.out.println(i+1 + ". " + itemsOrderedList.get(i).toString());
+		}
+		System.out.println("Total cost: " + totalCost());
+		System.out.println("****************************************************");
+	}
+
+
+	public void searchDvdById() {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.print("Input Id: ");
+		int id = keyboard.nextInt();
+		keyboard.nextLine();
+//		keyboard.close();
+		for (DigitalVideoDisc digitalVideoDisc : itemsOrderedList) {
+			if (digitalVideoDisc.id == id) {
+				System.out.println(digitalVideoDisc.toString());
+				return;
+			}
+		}
+
+		System.out.println("No match is found!");
+	}
+
+	public void searchDvdByTitle() {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.print("Input Title: ");
+		String tempTitle = keyboard.nextLine();
+//		keyboard.close();
+		for (DigitalVideoDisc digitalVideoDisc : itemsOrderedList) {
+			if (digitalVideoDisc.isMatch(tempTitle)) {
+				System.out.println(digitalVideoDisc.toString());
+				return;
+			}
+		}
+
+		System.out.println("No match is found!");
+	}
 }
