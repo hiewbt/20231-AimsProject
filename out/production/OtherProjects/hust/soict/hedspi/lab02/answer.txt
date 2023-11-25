@@ -4,3 +4,6 @@ a DVD by category. Does JAVA allow you to do this?
 -> if you have two constructors with the same parameter type, Java will not allow it.
 The method signature, which includes the method name and the parameter types,must be unique within the same class.
 If you try to declare two constructors with the same parameter types, you will get a compilation error.
+
+- Is JAVA a Pass by Value or a Pass by Reference programming language?
+-> Java is strictly "pass-by-value"

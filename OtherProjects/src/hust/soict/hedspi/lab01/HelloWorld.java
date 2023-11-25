@@ -1,4 +1,4 @@
-package OtherProjects.hust.soict.hedspi.lab01;
+package hust.soict.hedspi.lab01;
 public class HelloWorld {
     public static void main (String[] args) {
         System.out.println("Xin chao \n cac ban!");
