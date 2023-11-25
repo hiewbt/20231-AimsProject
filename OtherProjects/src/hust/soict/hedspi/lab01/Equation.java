@@ -1,4 +1,4 @@
-package OtherProjects.hust.soict.hedspi.lab01;
+package hust.soict.hedspi.lab01;
 import java.util.Scanner;
 import java.lang.Math;
 public class Equation {
