@@ -38,18 +38,19 @@ public class Cart {
 
 
 	public float totalCost() {
-		for(int i = 0; i < itemsOderedList.size(); i++) {
-			total += itemsOderedList.get(i).getCost();
-		}
+        for (DigitalVideoDisc digitalVideoDisc : itemsOderedList) {
+            total += digitalVideoDisc.getCost();
+        }
 		return total;
 	}
 
 	public void cartItem() {
 		for(int i = 0; i < itemsOderedList.size(); i++) {
-			System.out.println(i+1 + "\t" + itemsOderedList.get(i).getTitle() + "\t\t" + itemsOderedList.get(i).getCost());
+//			System.out.println(i+1 + "\t" + itemsOderedList.get(i).getTitle() + "\t\t" + itemsOderedList.get(i).getCost());
+			System.out.printf("%-4d%-20s%.2f\n",i+1, itemsOderedList.get(i).getTitle(), itemsOderedList.get(i).getCost());
 		}
 		total = 0;
-		System.out.println(" \ttotal\t\t" + totalCost());
+		System.out.printf("%-4s%-20s%.2f", "", "Total", totalCost());
 	}
 
 }
