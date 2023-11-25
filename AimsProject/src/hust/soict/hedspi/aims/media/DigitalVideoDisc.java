@@ -1,9 +1,7 @@
 package hust.soict.hedspi.aims.media;
 
-public class DigitalVideoDisc extends Media {
+public class DigitalVideoDisc extends Disc {
     private static int nbDigitalVideoDiscs = 0;
-    private String director;
-    private int length;
 
     public DigitalVideoDisc(String title) {
         this.setTitle(title);
@@ -12,33 +10,22 @@ public class DigitalVideoDisc extends Media {
     }
 
     public DigitalVideoDisc(String title, String category, float cost) {
-        this(title);
-
-        this.setCategory(category);
-        this.setCost(cost);
+        super(title,category,cost);
     }
 
     public DigitalVideoDisc(String title, String category, String director, float cost) {
         this(title, category, cost);
-        this.director = director;
+        this.setDirector(director);
     }
 
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         this(title, category, director, cost);
-        this.length = length;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public int getLength() {
-        return length;
+        this.setLength(length);
     }
 
     @Override
     public String toString() {
-        return "DVD - " + this.getTitle() + " - " + this.getCategory() + " - " + director + " - " + length + ": " + this.getCost() + "$";
+        return "DVD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getDirector() + " - " + this.getLength() + ": " + this.getCost() + "$";
     }
 
     public boolean isMatch(String tempString) {
