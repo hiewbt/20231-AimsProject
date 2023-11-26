@@ -2,7 +2,7 @@ package hust.soict.hedspi.aims.media;
 
 import java.util.ArrayList;
 
-public class CompactDisc extends Disc {
+public class CompactDisc extends Disc implements Playable {
     private String artist;
     private ArrayList<Track> tracks = new ArrayList<Track>();
 
@@ -46,12 +46,22 @@ public class CompactDisc extends Disc {
         else System.out.println("Fail to delete! The track is not exist");
     }
 
+    @Override
     public int getLength() {
         int l = 0;
         for (Track t : tracks) {
-            l += t.getLenght();
+            l += t.getLength();
         }
 
         return l;
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Artist: " + this.artist);
+        System.out.println("List of track");
+        for (Track t : tracks) {
+            t.play();
+        }
     }
 }
