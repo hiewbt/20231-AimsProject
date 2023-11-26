@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
-	private float total = 0;
 	private ArrayList<Media> itemsOrdered = new ArrayList<Media>(MAX_NUMBERS_ORDERED);
 
 	public void addMedia(Media media) {
@@ -35,7 +34,7 @@ public class Cart {
 	}
 
 	public float totalCost() {
-		total = 0;
+		float total = 0;
         for (Media media : itemsOrdered) {
             total += media.getCost();
         }
