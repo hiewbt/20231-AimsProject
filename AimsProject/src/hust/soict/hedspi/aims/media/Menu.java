@@ -164,13 +164,12 @@ public class Menu {
         while (true) {
             System.out.println("Enter the track title (Enter nothing to quit): ");
             trackTitle = keyboard.nextLine();
+            if (trackTitle.isEmpty())
+                break;
             System.out.println("Enter the track length: ");
             trackLength = keyboard.nextInt();
             keyboard.nextLine();
-            if (!trackTitle.isEmpty())
-                cd.addTrack(new Track(trackTitle, trackLength));
-            else
-                break;
+            cd.addTrack(new Track(trackTitle, trackLength));
         }
         return cd;
 
