@@ -68,4 +68,12 @@ public abstract class Media {
         return false;
     }
 
+    public boolean isMatch(String title) {
+        return this.getTitle().equals(title);
+    }
+
+    public boolean isMatch(int id) {
+        return this.getId()==id;
+    }
+
 }

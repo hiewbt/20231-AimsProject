@@ -1,12 +1,9 @@
 package hust.soict.hedspi.aims.media;
 
 public class DigitalVideoDisc extends Disc implements Playable {
-    private static int nbDigitalVideoDiscs = 0;
 
     public DigitalVideoDisc(String title) {
         this.setTitle(title);
-        nbDigitalVideoDiscs++;
-        this.setId(nbDigitalVideoDiscs);
     }
 
     public DigitalVideoDisc(String title, String category, float cost) {
@@ -21,6 +18,14 @@ public class DigitalVideoDisc extends Disc implements Playable {
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         this(title, category, director, cost);
         this.setLength(length);
+    }
+
+    public DigitalVideoDisc(int id, String title, String category, float cost) {
+        super(id, title, category, cost);
+    }
+
+    public DigitalVideoDisc(int id, String title, String category, String director, int length, float cost) {
+        super(id, title, category, director, length, cost);
     }
 
     @Override
