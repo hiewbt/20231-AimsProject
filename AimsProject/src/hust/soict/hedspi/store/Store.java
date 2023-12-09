@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Store {
-    private ArrayList<Media> itemsInStore = new ArrayList<>();
+    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
     public void addMedia(Media... media) {
         itemsInStore.addAll(Arrays.asList(media));
@@ -35,5 +35,9 @@ public class Store {
             System.out.println(i + ". " + m.toString());
             i++;
         }
+    }
+
+    public List<Media> getItemsInStore() {
+        return itemsInStore;
     }
 }
