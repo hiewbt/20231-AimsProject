@@ -30,17 +30,18 @@ public class StoreManagerScreen extends JFrame {
         JMenuItem addBook = new JMenuItem("Add Book");
         JMenuItem addCd = new JMenuItem("Add CD");
         JMenuItem addDvd = new JMenuItem("Add DVD");
-        addDvd.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new AddDigitalVideoDiscToStoreScreen(store);
-                dispose();
-            }
-        });
+
         addCd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new AddCompactDiscToStoreScreen(store);
+                dispose();
+            }
+        });
+        addDvd.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddDigitalVideoDiscToStoreScreen(store);
                 dispose();
             }
         });

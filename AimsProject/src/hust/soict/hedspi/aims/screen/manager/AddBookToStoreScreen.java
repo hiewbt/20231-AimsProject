@@ -14,9 +14,9 @@ public class AddBookToStoreScreen extends JFrame {
     private Store store;
     private JTextField id;
     private JTextField title;
+    private JTextField authors;
     private JTextField category;
     private JTextField cost;
-    private JTextField authors;
     private JButton submitBtn;
     private JButton backBtn;
 
@@ -25,25 +25,26 @@ public class AddBookToStoreScreen extends JFrame {
         Container cp = getContentPane();
         cp.setLayout(new GridLayout(6,2));
 
-        cp.add(new JLabel("Enter id"));
+        cp.add(new JLabel("Id"));
         id = new JTextField();
         cp.add(id);
 
-        cp.add(new JLabel("Enter title"));
+        cp.add(new JLabel("Title"));
         title = new JTextField();
         cp.add(title);
 
-        cp.add(new JLabel("Enter authors ( separated by space )"));
+        cp.add(new JLabel("Authors"));
         authors = new JTextField();
         cp.add(authors);
 
-        cp.add(new JLabel("Enter category"));
+        cp.add(new JLabel("Category"));
         category = new JTextField();
         cp.add(category);
 
-        cp.add(new JLabel("Enter cost"));
+        cp.add(new JLabel("Cost"));
         cost = new JTextField();
         cp.add(cost);
+
         backBtn = new JButton("Back");
         backBtn.addActionListener(new ActionListener() {
 
