@@ -2,6 +2,8 @@ package hust.soict.hedspi.aims.cart;
 
 
 import hust.soict.hedspi.aims.media.Media;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -104,5 +106,9 @@ public class Cart {
 
 	public boolean isEmpty() {
 		return itemsOrdered.isEmpty();
+	}
+
+	public ObservableList<Media> getItemsOrdered() {
+		return (ObservableList<Media>) itemsOrdered;
 	}
 }

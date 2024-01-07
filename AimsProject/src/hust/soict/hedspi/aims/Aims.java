@@ -1,6 +1,7 @@
 package hust.soict.hedspi.aims;
 
 import hust.soict.hedspi.aims.cart.Cart;
+import hust.soict.hedspi.aims.exception.PlayerException;
 import hust.soict.hedspi.aims.media.*;
 import hust.soict.hedspi.store.Store;
 
@@ -9,7 +10,7 @@ import java.util.Scanner;
 
 public class Aims {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws PlayerException {
         Store store = new Store();
         Cart cart = new Cart();
 //        For test

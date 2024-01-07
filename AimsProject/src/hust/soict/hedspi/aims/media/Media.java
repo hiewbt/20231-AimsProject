@@ -62,11 +62,15 @@ public abstract class Media {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof Media m) {
-            return m.title.equals(this.title);
+        if (obj instanceof Media) {
+            Media that = (Media) obj;
+            if (this.title != that.title) return false;
+            return true;
+        } else {
+            throw new ClassCastException("ERROR: Object can not cast to Media type");
         }
-        return false;
     }
+
 
     public boolean isMatch(String title) {
         return this.getTitle().equals(title);
